@@ -7,6 +7,8 @@
         <link href="styles/main.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/CDVPDFViewer.js"></script>
+    	<script type="text/javascript">app.initialize();</script>
         <title>File Transfer</title>
     </head>
     
@@ -18,6 +20,12 @@
             <div style="margin:10px 5px;">Clicking the button downloads an image from the Icenium site and saves it on the device.</div>
             <div class="action-area ch30">
                 <button class="button dh" id="download">Download</button>
+                <button class="button dh" id="open" onclick="openPdf();">Open PDF</button>
+                <button class="button dh" id="a" onclick="openPdf2();">OPEN PDF 2</button>
+                <button class="button dh" id="b" onclick="alert('b');">B</button>
+                <button class="button dh" id="c" onclick="alert('c');">C</button>
+                <button class="button dh" id="d" onclick="alert('d');">D</button>
+                <button class="button dh" id="e" onclick="alert('e');">E</button>
             </div>
 			<div class="result-area ch70">
                 <div class="results">

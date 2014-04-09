@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="pdfviewer" version="1.0.0">
+    <name>CDVPDFViewer</name>
+    <author>Dev Team (http://www.knowlodge.com.br/)</author>
+    
+    <keywords>cordova, pdf</keywords>
+
+    <engines>
+        <engine name="cordova" version=">=3.0" />
+    </engines>
+
+    <platform name="ios">
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="CDVPDFViewer">
+                <param name="ios-package" value="CDVPDFViewer"/>
+            </feature>
+        </config-file>
+
+		<framework src="MessageUI.framework" weak="true"/>
+		<framework src="Foundation.framework" weak="true"/>
+		<framework src="UIKit.framework" weak="true"/>
+		<framework src="QuartzCore.framework" weak="true"/>
+		<framework src="CoreGraphics.framework" weak="true"/>
+		<framework src="ImageIO.framework" weak="true"/>
+
+        <header-file src="src/ios/CDVPDFViewer.h" />
+        <source-file src="src/ios/CDVPDFViewer.m" />
+
+        <header-file src="src/ios/CDVPDFViewerViewController.h" />
+        <source-file src="src/ios/CDVPDFViewerViewController.m" />
+		<source-file src="src/ios/CDVPDFViewerViewController.xib" />
+
+        <header-file src="src/ios/ReaderViewController.h" />
+        <source-file src="src/ios/ReaderViewController.m" />
+
+        <header-file src="src/ios/ReaderDocument.h" />
+        <source-file src="src/ios/ReaderDocument.m" />
+
+        <header-file src="src/ios/CGPDFDocument.h" />
+        <source-file src="src/ios/CGPDFDocument.m" />	
+
+        <header-file src="src/ios/ReaderConstants.h" />
+        <source-file src="src/ios/ReaderConstants.m" />
+
+        <header-file src="src/ios/ThumbsViewController.h" />
+        <source-file src="src/ios/ThumbsViewController.m" />
+
+        <header-file src="src/ios/ThumbsMainToolbar.h" />
+        <source-file src="src/ios/ThumbsMainToolbar.m" />
+
+        <header-file src="src/ios/UIXToolbarView.h" />
+        <source-file src="src/ios/UIXToolbarView.m" />	
+
+        <header-file src="src/ios/ReaderThumbView.h" />
+        <source-file src="src/ios/ReaderThumbView.m" />
+
+        <header-file src="src/ios/ReaderThumbsView.h" />
+        <source-file src="src/ios/ReaderThumbsView.m" />
+
+        <header-file src="src/ios/ReaderMainToolbar.h" />
+        <source-file src="src/ios/ReaderMainToolbar.m" />
+
+        <header-file src="src/ios/ReaderMainPagebar.h" />
+        <source-file src="src/ios/ReaderMainPagebar.m" />
+
+        <header-file src="src/ios/ReaderContentView.h" />
+        <source-file src="src/ios/ReaderContentView.m" />
+
+        <header-file src="src/ios/ReaderThumbCache.h" />
+        <source-file src="src/ios/ReaderThumbCache.m" />
+
+        <header-file src="src/ios/ReaderThumbRequest.h" />
+        <source-file src="src/ios/ReaderThumbRequest.m" />
+
+        <header-file src="src/ios/ReaderThumbQueue.h" />
+        <source-file src="src/ios/ReaderThumbQueue.m" />
+
+        <header-file src="src/ios/ReaderThumbFetch.h" />
+        <source-file src="src/ios/ReaderThumbFetch.m" />
+
+        <header-file src="src/ios/ReaderContentPage.h" />
+        <source-file src="src/ios/ReaderContentPage.m" />
+
+        <header-file src="src/ios/ReaderContentTile.h" />
+        <source-file src="src/ios/ReaderContentTile.m" />
+
+        <header-file src="src/ios/ReaderThumbRender.h" />
+        <source-file src="src/ios/ReaderThumbRender.m" />
+		
+    </platform>
+</plugin>
