@@ -28,10 +28,10 @@
 /* The interface that you will use to access functionality */
  
  // Show a webpage, will result in a callback to onLocationChange
- CDVPDFViewer.prototype.showPDF = function(loc)
+ CDVPDFViewer.prototype.showPDF = function(loc, pass)
  {
      console.log("iniciando showPDF...");
-     cordova.exec(null, null, 'CDVPDFViewer', 'showPDF',[loc])
+     cordova.exec(null, null, 'CDVPDFViewer', 'showPDF',[loc, pass])
  };
  
  // close the browser, will NOT result in close callback

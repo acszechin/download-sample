@@ -3,10 +3,10 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 	var that = this,
 	App = new downloadApp(),
-	fileName = "phonegap-book.pdf",
-    uri = encodeURI("http://192.168.1.7/xampp/downloads/phonegap-book.pdf")
+	fileName = "FR6XFd22123",
+    //uri = encodeURI("http://192.168.1.7/xampp/downloads/phonegap-book.pdf")
     //uri = encodeURI("https://s3.amazonaws.com/Liferay-S3-File-Storage/oikos/html5_architecture.pdf"),
-    //uri = "https://poc-oikos-download-2014-04-08.s3-us-west-2.amazonaws.com/arquivoGrandePocS3?Expires=1397002958&AWSAccessKeyId=ASIAJZ4FGH3BU4VGY4SQ&x-amz-security-token=AQoDYXdzELH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEa8AF19nGE7Izx7C1EVDuHUzMXxi9dT3IZC3Z6Gu6xd1aik8sY2fK5Q0R3I0d4HtKkvVc0lYUnAM8aI2cqyf1ehLA2g2BtJi80z5Wqx9ma1tOke2ZYhxcTW%2Fplv7KCUmbgk9dOcY1tsrOBDzIz7cjVXmKLKInSV%2BtH2VCv9AIMH89YvoSYQ%2B%2FC7Zip3%2FQW5xO97YkPvg6Ii1kLd9Zxjq9y3H1cVG%2FsMIzDa5AOJA3jqYiQLiQAhjHoNRou%2FVmaS95dmZe4wjH7Of4%2BzE2HWGBKBbVNyi5XoT2NX7C0qSR%2Fza0%2F3wfRSc8myXPmmYbsnFdpC6sgvomSmgU%3D&Signature=pm5iZ%2BLLvntJ3RZ5A%2FVhBG0Wz%2FE%3D";    
+    uri = "https://poc-oikos-download-2014-04-08.s3-us-west-2.amazonaws.com/id_device/livro_protegido_id?Expires=1397013650&AWSAccessKeyId=ASIAI36QSSGJNXLAGUAA&x-amz-security-token=AQoDYXdzELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEa8AHjG7m%2FNOk9JyC5qpNkNXKqOcqvtDv0gajNTsWyZhGF7HKPIwTfp3LTD3j%2BtbZr9lJRpvvwhy%2BkYl2v%2Bl1QiFIwImKjsRzicwDgrWM9CO9GBS4N4VaLxgck7ngojBvYyeRg4qThbTxdy4zA3YOcMB4E2Vvm9APC%2BKBHGe5%2BlP1V8PNcagnrQL0eH%2F%2FaGjpZvw4zvkyTKmmPUeJ35uf%2FFCuDXOJPEOLfNF03cZ2W4IpaERtJcn4N1QDygf9y4%2FjaPUDqtZepDWZjdqA3v7V6cLfh9tF3zRedVxiAJVDieZOTUr2QqNbaZu0Kdv7H0OenowMg%2F9ySmgU%3D&Signature=7y%2F2Zn1WDGT8GIuAay0uoW9YNhM%3D";    
 	folderName = "test";
     
 	navigator.splashscreen.hide();
@@ -26,13 +26,13 @@ downloadApp.prototype = {
 		filePath = "";
         
 		document.getElementById("download").addEventListener("click", function() {
-            alert("download");
+            //alert("download");
 			that.getFilesystem(
 				function(fileSystem) {
 					console.log("gotFS");                    
 					if (device.platform === "Android") {
 						that.getFolder(fileSystem, folderName, function(folder) {
-                            alert("folder.fullPath: " + folder.fullPath);                            
+                            //alert("folder.fullPath: " + folder.fullPath);                            
 							filePath = folder.fullPath + "\/" + fileName;
 							that.transferFile(uri, filePath, fileSystem);
 						}, function() {
@@ -41,7 +41,7 @@ downloadApp.prototype = {
 					}
 					else {
 						filePath = fileSystem.root.fullPath + "\/" + fileName;
-                        alert(filePath);
+                        //alert(filePath);
 						that.transferFile(uri, filePath)
 					}
 				},
@@ -68,8 +68,8 @@ downloadApp.prototype = {
 
 	getFolder: function (fileSystem, folderName, success, fail) {
 		fileSystem.root.getDirectory(folderName, {create: true, exclusive: false}, success, fail)
-        alert("folderName: " + folderName);
-        alert("fileSystem: " + fileSystem.name)
+        //alert("folderName: " + folderName);
+        //alert("fileSystem: " + fileSystem.name)
 	},
     
     getFile: function (fileSystem, success, fail) {
@@ -105,9 +105,10 @@ downloadApp.prototype = {
     			uri,
     			filePath,
     			function(entry) {				
-                    alert("sucess: " + entry.fullPath);
-                    that.getFileSystem(fileSystem);                
+                    //alert("sucess: " + entry.fullPath);
+                    //that.getFileSystem(fileSystem) ;                
     				document.getElementById("result").innerHTML = "Arquivo salvo em: " + entry.fullPath;
+                    window.fullpath = entry.fullPath;
     			},
     			function(error) {
                     document.getElementById("result").innerHTML = "An error has occurred: Code = " + error.code;
@@ -123,7 +124,7 @@ downloadApp.prototype = {
 function openPdf(){
     console.log("inicio openPdf...");
 
-    window.plugins.CDVPDFViewer.showPDF('www/opcao-de-compra ');
+    window.plugins.CDVPDFViewer.showPDF(window.fullpath, 'knl@123');
 }
 
 function openPdf2(){
